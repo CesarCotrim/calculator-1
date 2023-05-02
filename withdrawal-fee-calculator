@@ -1,0 +1,152 @@
+ <!DOCTYPE html>
+ <html>
+	<head>
+		<title>Withdrawal Fee Calculator - 1</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f5f5f5;
+		}
+		header {
+			background-color: #00579b;
+			color: white;
+			margin-left: 635px;
+			margin-right: 635px;
+			padding: 20px;
+			border: 2px solid #b2d8f5;
+			text-align: center;
+			box-shadow: 90px 90px 400px rgba(120, 187, 214, 0.2);
+		}
+		h1 {
+			margin: 0;
+			font-size: 32px;
+		}
+		.container {
+			margin: 10px auto;
+			max-width: 500px;
+			background-color: white;
+			padding: 20px;
+			border: 2px solid #b2d8f5;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+		}
+		form {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		fieldset {
+			flex-basis: 98%;
+			margin: 10px 0;
+			border: none;
+			padding: 0;
+		}
+		legend {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+		input[type="number"] {
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			width: 100%;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+		button[type="submit"] {
+			background-color: #89b7db;
+			color: rgb(14, 12, 12);
+			padding: 10px 93px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			margin-top: -5px;
+			margin-left: 10px;
+		}
+		button[type="submit"]:hover {
+			background-color: #004d88;
+		}
+		.result {
+			margin-top: 20px;
+			background-color: #e0e0e0;
+			padding: 10px;
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 20px;
+			font-weight: bold;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+		}
+		.result label {
+			margin-right: 10px;
+		}
+		@media screen and (max-width: 768px) {
+			fieldset {
+				flex-basis: 100%;
+			}
+		}
+		p {
+			padding: 5px;
+			margin: 10px;
+			
+			/* other styling */
+			background-color: #e4ebf1;
+			border-radius: 5px;
+			color: rgb(17, 16, 16);
+			font-family: Arial;
+		}
+	</style>
+ </head>
+<body>
+	<header>
+		<h1>Withdrawal Fee Calculator - 1</h1>
+	</header>
+
+	<div class="container">
+		<form id="calculation-form-1">
+			<fieldset>
+			<p>
+				<label for="vocus-internal-costs">Vocus Internal Costs ($)</label>
+				<input type="number" id="vocus-internal-costs" name="vocus-internal-costs" required>
+			</p>
+			<p>	
+				<label for="number-of-months-paid-to-third-party">Number of months Vocus has already paid to the third-party (months)</label>
+				<input type="number" id="number-of-months-paid-to-third-party" name="number-of-months-paid-to-third-party" required>
+			</p>
+			<p>
+				<label for="monthly-fee-to-third-party">Monthly fee Vocus has already paid to the third-party ($)</label>
+				<input type="number" id="monthly-fee-to-third-party" name="monthly-fee-to-third-party" required>
+			</p>
+			<p>
+                <label for="third-party-contract-term-to-vocus">The remaining contract term that Vocus has signed with the third-party ($)</label>
+                <input type="number" id="third-party-contract-term-to-vocus" name="third-party-contract-term-to-vocus" required>
+			</p>
+			<p>
+                <label for="outstanding-monthly-fee-to-third-party">The outstanding monthly fee Vocus needs to pay the third-party ($)</label>
+                <input type="number" id="outstanding-monthly-fee-to-third-party" name="outstanding-monthly-fee-to-third-party" required>
+			</p> 
+
+		</fieldset>
+		<button type="submit">Click Here to Calculate Withdrawal Fee</button>
+	</form>
+
+	<div class="result" id="result-1">
+		<label>Withdrawal Fee: $</label>
+		<span id="withdrawal-fee-1"></span>
+	</div>
+</div>
+<script src="withdrawal-fee-calculator.js"></script>
+
+</body>
+</html>
